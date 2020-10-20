@@ -3,7 +3,7 @@
   <!--TODO: Origination Airport-->
   <div class="form-group">
       <label>Origination Airport</label>
-      <select class="form-control" name="originationAirport" id="originationAirport" [(ngModel)]=model.originationAirport >
+      <select class="form-control" name="originationAirport" id="originationAirport" [(ngModel)]=model.originationAirport #originationAirport="ngModel" >
         <option value="">SELECT AIRPORT</option>
         <option *ngFor="let airport of Airports" [value]="airport">
           {{airport}}
@@ -14,7 +14,7 @@
     <!--TODO: Destination Airport-->
   <div class="form group">
     <label>Destination Airport</label>
-    <select class="form-control" name="destinationAirport" id="destinationAirport" [(ngModel)]=model.destinationAirport>
+    <select class="form-control" name="destinationAirport" id="destinationAirport" [(ngModel)]=model.destinationAirport #destinationAirport="ngModel">
       <option value="">SELECT AIRPORT</option>
       <option *ngFor="let airport of Airports" [value]="airport">
         {{airport}}
@@ -25,19 +25,19 @@
    <!--TODO: Departure Date-->
   <div class="form group">
         <label>Select departure date</label>
-        <input type="date", id="departureDate" name="departureDate" min="2020-10-20" [(ngModel)]=model.departureDate>
+        <input type="date", id="departureDate" name="departureDate" [(ngModel)]=model.departureDate>
   </div>
 
      <!--TODO: Return Date-->
      <div class="form group">
-      <label>Select departure date</label>
-      <input type="date", id="returnDate", name="returnDate", min="2020-10-20" [(ngModel)]=model.returnDate>
+      <label>Select return date</label>
+      <input type="date" id="returnDate" name="returnDate" [(ngModel)]=model.returnDate>
   </div>
 
   <!--TODO: Number of Travelers-->
   <div class="form group">
     <label>Select the number of travelers</label>
-    <input type="number", id="numOfTravelers", name="numOfTravelers", min="1", max="20" [(ngModel)]=model.numOfTravelers>
+    <input type="number", id="numOfTravelers", name="numOfTravelers", min="1", max="20" [(ngModel)]=model.numOfTravelers #numOfTravelers="ngModel">
   </div>
 
 
