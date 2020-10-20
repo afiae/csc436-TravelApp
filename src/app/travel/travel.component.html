@@ -3,7 +3,7 @@
   <!--TODO: Origination Airport-->
   <div class="form-group">
       <label>Origination Airport</label>
-      <select class="form-control" name="originationAirport" id="originationAirport" [(ngModel)]=model.originationAirport #originationAirport="ngModel" >
+      <select class="form-control" name="originationAirport" [(ngModel)]=model.originationAirport #originationAirport="ngModel" >
         <option value="">SELECT AIRPORT</option>
         <option *ngFor="let airport of Airports" [value]="airport">
           {{airport}}
@@ -14,7 +14,7 @@
     <!--TODO: Destination Airport-->
   <div class="form group">
     <label>Destination Airport</label>
-    <select class="form-control" name="destinationAirport" id="destinationAirport" [(ngModel)]=model.destinationAirport #destinationAirport="ngModel">
+    <select class="form-control" name="destinationAirport" [(ngModel)]=model.destinationAirport #destinationAirport="ngModel">
       <option value="">SELECT AIRPORT</option>
       <option *ngFor="let airport of Airports" [value]="airport">
         {{airport}}
