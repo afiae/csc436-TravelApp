@@ -5,7 +5,7 @@
       <label>Origination Airport</label>
       <select class="form-control" name="originationAirport" id="originationAirport" [(ngModel)]=model.originationAirport >
         <option value="">SELECT AIRPORT</option>
-        <option value=*ngFor="let airport of Airports" [value]="airport">
+        <option *ngFor="let airport of Airports" [value]="airport">
           {{airport}}
         </option>
       </select>
@@ -16,7 +16,7 @@
     <label>Destination Airport</label>
     <select class="form-control" name="destinationAirport" id="destinationAirport" [(ngModel)]=model.destinationAirport>
       <option value="">SELECT AIRPORT</option>
-      <option value=*NGfOR="let airport of Airports" [value]="airport">
+      <option *ngFor="let airport of Airports" [value]="airport">
         {{airport}}
       </option>
     </select>
@@ -25,7 +25,7 @@
    <!--TODO: Departure Date-->
   <div class="form group">
         <label>Select departure date</label>
-        <input type="date", id="departureDate" name="departureDate" min="2020-10-20" [(ngModel)]=model.departureDate> 
+        <input type="date", id="departureDate" name="departureDate" min="2020-10-20" [(ngModel)]=model.departureDate>
   </div>
 
      <!--TODO: Return Date-->
