@@ -27,22 +27,10 @@
       <label>Departure Date</label>
       <input type="date" class="form-control" name="departureDate" [(ngModel)]="model.departureDate">
     </div>
-    <div class="form-group col-md-4 mb-3">
-      {{model.departureDate | date | uppercase}}
-    </div>
-    <div class="form-group col-md-4 mb-3">
-      {{model.departureDate | date:"MM/dd/yy"}}
-    </div>
 
     <div class="form-group col-md-4 mb-3">
       <label>Return Date</label>
       <input type="date" class="form-control" name="returnDate" [(ngModel)]="model.returnDate">
-    </div>
-    <div class="form-group col-md-4 mb-3">
-      {{model.returnDate | date | uppercase}}
-    </div>
-    <div class="form-group col-md-4 mb-3">
-      {{model.returnDate | date:"MM/dd/yy"}}
     </div>
   </div>
 

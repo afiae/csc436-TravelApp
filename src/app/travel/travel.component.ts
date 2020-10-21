@@ -6,8 +6,8 @@ export class Travel {
   public destinationAirport: string;
   public departureDate: Date;
   public returnDate: Date;
-  public numOfTravelers: number;
-  public tripCost: number;
+  public numOfTravelers = 1;
+  public tripCost: number = 150 * this.numOfTravelers;
 }
 
 @Component({
@@ -38,11 +38,10 @@ export class TravelComponent implements OnInit{
     'JFK',
     'IAH',
     'DPS',
-    'KEF'
   ];
 
   onSubmit(f: NgForm): void{
-    this.model.tripCost = 150 * this.model.numOfTravelers;
+    // this.model.tripCost = 150 * this.model.numOfTravelers;
     console.log(this.model.tripCost);
   }
 }
