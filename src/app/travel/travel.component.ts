@@ -30,10 +30,15 @@ export class TravelComponent implements OnInit{
     'ORD',
     'SFO',
     'LAX',
-    'SFO',
+    'CUN',
     'LGA',
     'SNA',
-    'HNL'
+    'HNL',
+    'ICN',
+    'JFK',
+    'IAH',
+    'DPS',
+    'KEF'
   ];
 
   onSubmit(f: NgForm): void{
