@@ -1,20 +1,21 @@
-<form #travelForm="ngForm" (ngSubmit)="onSubmit(travelForm)">
+<div class="container">
+<form #travelForm="ngForm">
 
   <div class="form-row">
     <div class="form-group col-md-4 mb-3">
       <label>Origination Airport</label>
-      <select class="form-control" name="originationAirport" [(ngModel)]="model.originationAirport">
-        <option value="">[select airport]</option>
+
+      <select required type="string" class="form-control" name="origin" id="origin" [(ngModel)]="origin">
         <option *ngFor="let airport of Airports" [value]="airport">
           {{airport}}
         </option>
       </select>
+
     </div>
 
     <div class="form-group col-md-4 mb-3">
       <label>Destination Airport</label>
-      <select class="form-control" name="destinationAirPort" [(ngModel)]="model.destinationAirport">
-        <option calue="">[select airport]</option>
+      <select required type="string" class="form-control" name="destination" id="destination" [(ngModel)]="destination">
         <option *ngFor="let airport of Airports" [value]="airport">
           {{airport}}
         </option>
@@ -25,24 +26,35 @@
   <div class="form-row">
     <div class="form-group col-md-4 mb-3">
       <label>Departure Date</label>
-      <input type="date" class="form-control" name="departureDate" [(ngModel)]="model.departureDate">
+      <input required type="date" class="form-control" name="departureDate" id="departureDate" [(ngModel)]="departureDate" />
     </div>
+
 
     <div class="form-group col-md-4 mb-3">
       <label>Return Date</label>
-      <input type="date" class="form-control" name="returnDate" [(ngModel)]="model.returnDate">
+      <input required type="date" class="form-control" name="returnDate" id="returnDate" [(ngModel)]="returnDate"/>
     </div>
+
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-4 mb-3">
-      <label>Number of travelers</label>
-      <input type="number" id="numOfTravelers" min="1" max="20" [(ngModel)]="model.numOfTravelers">
+      <label>Number of travelers </label>
+      <input required type="number" min="1" id="numOfTravelers" [(ngModel)]="numOfTravelers" name="numOfTravelers"
+        class="form control" />
     </div>
+
+
 
     <div class="form-group col-md-4 mb-3">
-      <button class="btn btn-primary btn-block">Submit</button>
+      <input (click)="calculatePrice(numOfTravelers)" type="submit" class="btn btn-primary" />
     </div>
   </div>
-
 </form>
+
+
+<div class="container">
+  <label class="col-form-label">Travel Price = {{tripCost}} </label>
+</div>
+
+</div>

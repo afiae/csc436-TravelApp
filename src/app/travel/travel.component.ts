@@ -1,15 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 
-export class Travel {
-  public originationAirport: string;
-  public destinationAirport: string;
-  public departureDate: Date;
-  public returnDate: Date;
-  public numOfTravelers = 1;
-  public tripCost: number = 150 * this.numOfTravelers;
-}
-
 @Component({
   selector: 'app-travel',
   templateUrl: './travel.component.html',
@@ -17,15 +8,13 @@ export class Travel {
 })
 
 export class TravelComponent implements OnInit{
+  departureDate: Date;
+  returnDate: Date;
+  numOfTravelers = 1;
+  tripCost = 0;
+  origin = '';
+  destination = '';
 
-  constructor() { }
-
-  ngOnInit(): void {   }
-
-  // tslint:disable-next-line: member-ordering
-  model = new Travel();
-
-  // tslint:disable-next-line: member-ordering
   Airports: string[]  = [
     'ORD',
     'SFO',
@@ -40,9 +29,12 @@ export class TravelComponent implements OnInit{
     'DPS',
   ];
 
-  onSubmit(f: NgForm): void{
-    // this.model.tripCost = 150 * this.model.numOfTravelers;
-    console.log(this.model.tripCost);
+  constructor() { }
+
+  ngOnInit(): void {   }
+
+  calculatePrice(numOfTravelers): void {
+    this.tripCost = 150 * numOfTravelers;
   }
 }
 
