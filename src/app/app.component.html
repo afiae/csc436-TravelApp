@@ -1,3 +1,29 @@
-<div class="container">
-  <app-travel></app-travel>
-</div>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
+  <ul class="navbar-nav">
+
+    <div class = "navbar-header">
+
+      <a class="navbar-brand" [routerLink]="['/home']">Travel App</a>
+    </div>
+
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="hrefDropdown" role="button" data-toggle="dropdown">
+        Menu
+      </a>
+      <div class="dropdown-menu" aria-labelledby="hrefDropdown">
+       <a class="dropdown-item" [routerLink]="['/about']">About</a>
+       <a class="dropdown-item" [routerLink]="['/travel']">Travel</a>
+      </div>
+    </li>
+
+    <a class="nav-link" [routerLink]="['/about']">About</a>
+    <a class="nav-link" [routerLink]="['/travel']">Travel</a>
+  </ul>
+</nav>
+<br />
+<br />
+<br />
+
+<!--<app-home></app-home>-->
+<router-outlet></router-outlet>
